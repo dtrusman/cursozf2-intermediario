@@ -43,4 +43,21 @@ class User extends AbstractService
         }
     }
 
+    public function activate($key)
+    {
+        $repository = $this->em->getRepository('SONUser\Entity\User');
+
+        $user = $repository->findOneByActivationKey($key);
+
+        if($user && !$user->getActive())
+        {
+            $user->setActive(true);
+
+            $this->em->persist($user);
+            $this->em->flush();
+
+            return $user;
+        }
+    }
+
 }

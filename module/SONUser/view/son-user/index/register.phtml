@@ -1,1 +1,16 @@
 <h1>Register Olá Mundo</h1>
+
+<?php if($this->messages): ?>
+    <p><?=$this->messages[0]?></p>
+<?php else: ?>
+<?php
+    $form = $this->form;
+    $form->setAttribute('action', $this->url('sonuser-register', array('controller' => 'Index', 'action' => 'register')));
+    $form->prepare();
+
+    echo $this->form()->openTag($form);
+    echo $this->formCollection($form);
+    echo $this->form()->closeTag($form);
+?>
+
+<?php endif; ?>

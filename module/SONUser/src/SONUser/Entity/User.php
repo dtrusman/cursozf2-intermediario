@@ -14,6 +14,7 @@ use Zend\Stdlib\Hydrator;
  * @ORM\Table(name="sonuser_users")
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="SONUser\Entity\UserRepository")
  */
 class User
 {
