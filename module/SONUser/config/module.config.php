@@ -43,11 +43,11 @@ return array(
             __NAMESPACE__ . '_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
-                'paths' => array(__DIR__ . '/../src' . __NAMESPACE__ . '/Entity')
+                'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity')
             ),
-            'orm_defaults' => array(
+            'orm_default' => array(
                 'drivers' => array(
-                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . 'driver'
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
                 ),
             ),
         ),
