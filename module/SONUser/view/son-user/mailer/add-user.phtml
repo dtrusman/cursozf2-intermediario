@@ -1,0 +1,9 @@
+Olá <?=$this->nome?>,
+<br />
+<br />
+
+<p>
+    Esse email tem o objetivo de confirmar o seu cadastro em nosso sistema.
+    <br />
+    Para ativar sua conta, acesse: http://<?=$this->url('sonuser-activate', array('key' => $this->activationKey))?>
+</p>
